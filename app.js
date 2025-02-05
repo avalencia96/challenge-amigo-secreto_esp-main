@@ -37,3 +37,21 @@ function actualizarLista() {
       lista.appendChild(li);
     }
   }
+
+  function sortearAmigo() {
+    // Validar que haya amigos disponibles
+    if (amigos.length === 0) {
+      alert("No hay amigos para sortear.");
+      return;
+    }
+  
+    // Generar un índice aleatorio basado en la longitud del array
+    let indiceAleatorio = Math.floor(Math.random() * amigos.length);
+  
+    // Obtener el nombre sorteado usando el índice generado
+    let amigoSorteado = amigos[indiceAleatorio];
+  
+    // Mostrar el resultado actualizando el contenido del elemento con id "resultado"
+    let elementoResultado = document.getElementById("resultado");
+    elementoResultado.innerHTML = "Tu amigo secreto es: " + amigoSorteado;
+  }
